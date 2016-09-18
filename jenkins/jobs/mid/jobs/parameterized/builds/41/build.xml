@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.ParametersAction>
+      <safeParameters class="sorted-set"/>
+      <parameters>
+        <hudson.model.StringParameterValue>
+          <name>greet</name>
+          <description></description>
+          <value>Hello</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>who</name>
+          <description></description>
+          <value>Bobby</value>
+        </hudson.model.StringParameterValue>
+      </parameters>
+      <parameterDefinitionNames class="hudson.model.ParametersDefinitionProperty$1">
+        <outer-class>
+          <parameterDefinitions>
+            <hudson.model.StringParameterDefinition>
+              <name>greet</name>
+              <description></description>
+              <defaultValue>Hello</defaultValue>
+            </hudson.model.StringParameterDefinition>
+            <hudson.model.StringParameterDefinition>
+              <name>who</name>
+              <description></description>
+              <defaultValue>World</defaultValue>
+            </hudson.model.StringParameterDefinition>
+          </parameterDefinitions>
+        </outer-class>
+      </parameterDefinitionNames>
+    </hudson.model.ParametersAction>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>admin</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <hudson.plugins.logparser.LogParserAction plugin="log-parser@2.0">
+      <build class="build" reference="../../.."/>
+      <result>
+        <totalErrors>2</totalErrors>
+        <totalWarnings>0</totalWarnings>
+        <totalInfos>1</totalInfos>
+        <htmlLogFile>/vagrant/jenkins/jobs/mid/jobs/parameterized/builds/41/log_content.html</htmlLogFile>
+        <errorLinksFile>/vagrant/jenkins/jobs/mid/jobs/parameterized/builds/41/logerrorLinks.html</errorLinksFile>
+        <warningLinksFile>/vagrant/jenkins/jobs/mid/jobs/parameterized/builds/41/logwarningLinks.html</warningLinksFile>
+        <infoLinksFile>/vagrant/jenkins/jobs/mid/jobs/parameterized/builds/41/loginfoLinks.html</infoLinksFile>
+        <parsedLogURL>job/mid/job/parameterized/41/parsed_console/log.html</parsedLogURL>
+        <htmlLogPath>/vagrant/jenkins/jobs/mid/jobs/parameterized/builds/41</htmlLogPath>
+      </result>
+    </hudson.plugins.logparser.LogParserAction>
+  </actions>
+  <queueId>22</queueId>
+  <timestamp>1474212164468</timestamp>
+  <startTime>1474212164542</startTime>
+  <result>FAILURE</result>
+  <duration>140</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>/vagrant/jenkins/workspace/mid/parameterized</workspace>
+  <hudsonVersion>2.7.4</hudsonVersion>
+  <scm class="hudson.scm.NullChangeLogParser"/>
+  <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
+</build>

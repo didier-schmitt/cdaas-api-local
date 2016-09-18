@@ -1,0 +1,7 @@
+Started by user [8mha:AAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9pNLMnJTUIgCdZMfgwgAAAA==[0mBuilder
+ln -s builds/lastSuccessfulBuild /vagrant/data/jobs/echo/lastSuccessful failed: 71 Protocol error
+ln -s builds/lastStableBuild /vagrant/data/jobs/echo/lastStable failed: 71 Protocol error
+Building in workspace /vagrant/data/workspace/echo
+[echo] $ /bin/bash /tmp/hudson1688483585961417229.sh
+Hello World!
+Finished: SUCCESS

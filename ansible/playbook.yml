@@ -1,0 +1,67 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: add Yum repository for Jenkins
+    yum_repository:
+      name: jenkins
+      description: Jenkins-stable
+      baseurl: http://pkg.jenkins.io/redhat-stable
+      gpgkey: http://pkg.jenkins.io/redhat-stable/jenkins.io.key
+      gpgcheck: yes
+  
+  - name: download Rundeck
+    get_url: url=http://repo.rundeck.org/latest.rpm dest=/tmp/rundeck.rpm
+
+  - name: install rundeck
+    yum: name=/tmp/rundeck.rpm state=present
+    
+  - name: install Yum packages
+    yum: name={{item}} state=latest
+    with_items:
+    - gcc
+    - git
+    - python-pip
+    - python-virtualenv
+    - java-1.7.0-openjdk
+    - httpd
+    - jenkins
+    - rundeck
+
+  - name: configure Apache virtual host
+    copy: src=vhost.conf dest=/etc/httpd/conf.d/ 
+
+  - name: configure Jenkins
+    lineinfile:
+      dest: /etc/sysconfig/jenkins
+      regexp:  "^{{ item.key }}="
+      line: '{{ item.key }}="{{ item.value }}"'
+    with_items:
+    - { key: JENKINS_PORT, value: 8010 }
+    - { key: JENKINS_HOME, value: /vagrant/jenkins }
+    - { key: JENKINS_LISTEN_ADDRESS, value: 127.0.0.1 }
+
+  - name: configure rundeck
+    lineinfile: 
+      dest: /etc/rundeck/framework.properties
+      regexp: "^{{ item.key }}"
+      line: '{{ item.key }} = {{ item.value }}'
+    with_items:
+    - { key: framework.projects.dir, value: /vagrant/rundeck/projects }
+    - { key: framework.server.url, value: 'http://cdaas.localdomain:4440' }
+
+  - name: configure rundeck (cont'd)
+    lineinfile:
+      dest: /etc/rundeck/rundeck-config.properties
+      regexp: "^{{ item.key }}"
+      line: '{{ item.key }} = {{ item.value }}'
+    with_items:
+    - { key: grails.serverURL, value: 'http://cdaas.localdomain:4440' }
+    - { key: dataSource.url, value: 'jdbc:h2:file:/vagrant/rundeck/data/rundeckdb;MVCC=true;TRACE_LEVEL_FILE=4' }
+
+  - name: start services 
+    service: name={{item}} state=started
+    with_items:
+    - httpd
+    - jenkins
+    - rundeckd

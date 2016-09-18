@@ -1,0 +1,8 @@
+Started by user [8mha:AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZu/dLi1CL9xJTczDwACG0V4sAAAAA=[0mAdministrator
+ln -s builds/lastSuccessfulBuild /vagrant/jenkins/jobs/mid/jobs/parameterized/lastSuccessful failed: 71 Protocol error
+ln -s builds/lastStableBuild /vagrant/jenkins/jobs/mid/jobs/parameterized/lastStable failed: 71 Protocol error
+Building on master in workspace /vagrant/jenkins/workspace/mid/parameterized
+[parameterized] $ /bin/bash /tmp/hudson7167572751918403719.sh
+Hello Bobby!
+Build step 'Console output (build log) parsing' changed build result to FAILURE
+Finished: FAILURE

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>log-parser plugin page</title>
+		<link type="text/css" rel="stylesheet" href="http://cdaas.localdomain/css/style.css" />
+		<link type="text/css" rel="stylesheet" href="http://cdaas.localdomain/css/color.css" />
+	</head>
+	<body>
+<script type="text/javascript">
+	function toggleList(list){
+		element = document.getElementById(list).style;
+		element.display == 'none' ? element.display='block' : element.display='none';
+	}
+</script>
+<img src="http://cdaas.localdomain///static/9c50de61/images/16x16/red.gif" style="margin: 2px;" width="24" alt="Error Icon" height="24" />
+<a href="javascript:toggleList('Error')" target="_self"><STRONG>Error (2)</STRONG></a><br />
+<ul id="Error" style="display:none; margin-left:0; padding-left:3em">
+ <a target="content" href="log_content.html">Beginning of log</a>
+<br/>(2 Errors in this section)<br/>
+<li>1 <a target="content" href="log_content.html#ERROR1"><span style="color:red">ln -s builds/lastSuccessfulBuild /vagrant/jenkins/jobs/mid/jobs/parameterized/lastSuccessful failed: 71 Protocol error</span></a></li><br/>
+<li>2 <a target="content" href="log_content.html#ERROR2"><span style="color:red">ln -s builds/lastStableBuild /vagrant/jenkins/jobs/mid/jobs/parameterized/lastStable failed: 71 Protocol error</span></a></li><br/>
+</ul>
+<img src="http://cdaas.localdomain///static/9c50de61/images/16x16/yellow.gif" style="margin: 2px;" width="24" alt="Warning Icon" height="24" />
+<a href="javascript:toggleList('Warning')" target="_self"><STRONG>Warning (0)</STRONG></a><br />
+<ul id="Warning" style="display:none; margin-left:0; padding-left:3em">
+</ul>
+<img src="http://cdaas.localdomain///static/9c50de61/images/16x16/blue.gif" style="margin: 2px;" width="24" alt="Info Icon" height="24" />
+<a href="javascript:toggleList('Info')" target="_self"><STRONG>Info (1)</STRONG></a><br />
+<ul id="Info" style="display:none; margin-left:0; padding-left:3em">
+<li>1 <a target="content" href="log_content.html#INFO1"><span style="color:blue">Building on master in workspace /vagrant/jenkins/workspace/mid/parameterized</span></a></li><br/>
+</ul>
+	</body>
+</html>
